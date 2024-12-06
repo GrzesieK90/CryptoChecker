@@ -1,0 +1,162 @@
+*{
+  color: white;
+}
+.coin-container{
+  background: radial-gradient(#000971, #000000);
+  min-height: 100vh;
+  padding: 1rem;
+}
+.row{
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.details {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-shadow: 1px 1px 0 rgb(255, 0, 0);
+
+  @media (min-width: 769px) {
+    width: 30%;
+    margin: 0;
+    border-right: 2px solid white;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 80vw;
+    padding: 1rem 0;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 80vw;
+    padding: 1rem 0;
+  }
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      width: 80%;
+      margin: 0 auto 1.25rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  h6 {
+    width: 100%;
+    text-align: justify;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+  }
+}
+.img{
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  img{
+    margin: auto;
+    display: flex;
+    width: 150px;
+    height: auto;
+
+    @media (max-width: 576px) {
+      width: 180px;
+    }
+  }
+}
+.more-detail{
+  padding: 0.625rem;
+  margin: 0.625rem;
+  line-height: 3rem;
+  .title{
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 rgb(255, 0, 0);
+
+    @media (max-width: 576px) {
+      font-size: 1.1rem;
+    }
+  }
+  .value{
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @media (max-width: 576px) {
+      font-size: 1.25rem;
+    }
+  }
+}
+.right-details{
+  width: 100%;
+  padding: 1rem;
+
+  @media (min-width: 769px) {
+    width: 70%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+::ng-deep .mat-tab-group{
+  width: 100%;
+  height: auto;
+}
+::ng-deep .mat-tab-label{
+  color: white;
+  font-weight: bold;
+}
+::ng-deep .mat-tab-body-content{
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+::ng-deep .chart-container {
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.btn-custom{
+  color: white;
+  background: transparent;
+  font-weight: 400;
+  font-size: 18px;
+  border: 1px solid white;
+  width: 23%;
+}
+.btn-custom:focus{
+  background: #960000;
+  font-weight: 700;
+  font-size: 18px;
+  border: 1px solid #410000;
+}

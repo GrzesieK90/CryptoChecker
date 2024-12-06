@@ -1,0 +1,46 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: radial-gradient(#0015ff, #000000);
+  padding: 0.5rem 1rem;
+
+  @media (max-width: 576px) {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.form-field {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+
+  @media (max-width: 576px) {
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+}
+
+::ng-deep .mat-mdc-form-field {
+  width: 100%;
+  
+  .mat-mdc-form-field-flex {
+    background-color: transparent;
+  }
+  
+  .mat-mdc-text-field-wrapper {
+    background-color: transparent;
+  }
+  
+  .mat-mdc-form-field-label {
+    color: white;
+  }
+  
+  .mat-mdc-input-element {
+    color: white;
+  }
+}

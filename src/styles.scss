@@ -1,0 +1,206 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$CryptoChecker-primary: mat.define-palette(mat.$indigo-palette);
+$CryptoChecker-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$CryptoChecker-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$CryptoChecker-theme: mat.define-dark-theme((
+  color: (
+    primary: $CryptoChecker-primary,
+    accent: $CryptoChecker-accent,
+    warn: $CryptoChecker-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($CryptoChecker-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background: black; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Responsive breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;
+
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$tablet + 1}) and (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$desktop + 1}) {
+    @content;
+  }
+}
+
+// Global responsive styles
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mobile {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  @include tablet {
+    max-width: 720px;
+  }
+
+  @include desktop {
+    max-width: 960px;
+  }
+
+  @include large-desktop {
+    max-width: 1140px;
+  }
+}
+
+// Responsive grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+// Responsive typography
+html {
+  font-size: 16px;
+
+  @include mobile {
+    font-size: 14px;
+  }
+
+  @include tablet {
+    font-size: 15px;
+  }
+}
+
+// Responsive spacing
+:root {
+  --spacing-unit: 1rem;
+
+  @include mobile {
+    --spacing-unit: 0.75rem;
+  }
+
+  @include tablet {
+    --spacing-unit: 0.875rem;
+  }
+}
+
+// Hide elements based on screen size
+.hide-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+// Responsive tables
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  @include mobile {
+    font-size: 0.875rem;
+  }
+}
+
+// Material card responsive styles
+.mat-mdc-card {
+  @include mobile {
+    margin: 8px;
+  }
+
+  @include tablet {
+    margin: 12px;
+  }
+
+  @include desktop {
+    margin: 16px;
+  }
+}
+
+// Chart responsive styles
+.chart-container {
+  position: relative;
+  width: 100%;
+  
+  @include mobile {
+    height: 300px;
+  }
+
+  @include tablet {
+    height: 400px;
+  }
+
+  @include desktop {
+    height: 500px;
+  }
+}
